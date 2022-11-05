@@ -3,7 +3,6 @@ package com.project.flights.domain;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 
 @Entity

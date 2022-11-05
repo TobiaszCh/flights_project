@@ -3,8 +3,9 @@ package com.project.flights.domain;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "CARRIERS")
@@ -20,4 +21,12 @@ public class Carrier {
 
     @Column(name = "NAME")
     private String name;
+
+    @OneToMany(
+            targetEntity = Flight.class,
+            mappedBy = "carrier",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    private List<Flight> flights = new ArrayList<>();
 }
