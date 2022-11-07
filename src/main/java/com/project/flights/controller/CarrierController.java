@@ -1,21 +1,29 @@
 package com.project.flights.controller;
 
+import com.project.flights.domain.Carrier;
 import com.project.flights.domain.dto.CarrierDto;
+import com.project.flights.mapper.CarrierMapper;
+import com.project.flights.service.DbCarrierService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/flights")
+@RequiredArgsConstructor
+@RequestMapping("/v1/carriers")
 public class CarrierController {
+
+    private final DbCarrierService dbCarrierService;
+    private final CarrierMapper carrierMapper;
 
     @GetMapping
     public List<CarrierDto> getFlights() {
-        return new ArrayList<>();
+        List<Carrier> carriers = dbCarrierService.getAllTasks();
+        return carrierMapper.mapToCarrierDtoList(carriers);
     }
 
-    @GetMapping(value = "{flightId}")
+/*    @GetMapping(value = "{carriersId}")
     public CarrierDto getFlight(@PathVariable Long flightId) {
         return new CarrierDto(1L, "Lot");
     }
@@ -28,10 +36,11 @@ public class CarrierController {
     @PutMapping
     public CarrierDto updateFlight(CarrierDto carrierDto) {
         return new CarrierDto(1L, "Lot1");
-    }
+
 
     @PostMapping
     public void createCarrier(CarrierDto carrierDto) {
 
-    }
+    }*/
+
 }

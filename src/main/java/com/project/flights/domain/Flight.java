@@ -3,13 +3,12 @@ package com.project.flights.domain;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
-@Entity
-@Table(name = "FLIGHTS")
+@Entity(name = "FLIGHTS")
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Flight {
@@ -18,7 +17,7 @@ public class Flight {
     @NotNull
     @GeneratedValue
     @Column(name = "FLIGHT_ID")
-    private int Id;
+    private Long Id;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "TICKET_ID")

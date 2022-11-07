@@ -5,8 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
-@Entity
-@Table(name = "TICKETS")
+@Entity(name = "TICKETS")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Ticket {

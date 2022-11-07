@@ -10,8 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@Entity
-@Table(name = "DATES")
+@Entity(name = "DATES")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Date {

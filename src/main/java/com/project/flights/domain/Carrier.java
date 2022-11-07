@@ -1,14 +1,14 @@
 package com.project.flights.domain;
 
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "CARRIERS")
+@Entity(name = "CARRIERS")
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Carrier {

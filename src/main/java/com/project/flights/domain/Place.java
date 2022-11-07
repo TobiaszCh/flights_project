@@ -7,8 +7,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "PLACES")
+@Entity(name = "PLACES")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Place {
