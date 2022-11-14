@@ -29,4 +29,9 @@ public class Carrier {
             fetch = FetchType.LAZY
     )
     private List<Flight> flights = new ArrayList<>();
+
+    public Carrier(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

@@ -2,12 +2,14 @@ package com.project.flights.domain;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "PLACES")
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Place {
@@ -34,4 +36,11 @@ public class Place {
             fetch = FetchType.LAZY
     )
     private List<Flight> flights = new ArrayList<>();
+
+    public Place(String id, String continent, String country, String city) {
+        this.id = id;
+        this.continent = continent;
+        this.country = country;
+        City = city;
+    }
 }

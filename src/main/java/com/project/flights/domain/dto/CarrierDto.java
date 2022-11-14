@@ -12,5 +12,4 @@ public class CarrierDto {
 
     private Long id;
     private String name;
-    private List<Long> flightsId;
 }
