@@ -1,17 +1,17 @@
 package com.project.flights.repository;
 
-import com.project.flights.domain.Carrier;
+import com.project.flights.domain.Ticket;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface CarrierRepository extends CrudRepository<Carrier, Long> {
+public interface TicketRepository extends CrudRepository<Ticket, Long> {
 
     @Override
-    List<Carrier> findAll();
+    List<Ticket> findAll();
 
     @Override
-    Optional<Carrier> findById(Long id);
+    Optional<Ticket> findById(Long id);
 }

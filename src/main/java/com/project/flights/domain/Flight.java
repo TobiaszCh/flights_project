@@ -28,7 +28,7 @@ public class Flight {
 
     @ManyToOne
     @JoinColumn(name = "DATE_ID")
-    private Date date;
+    private Dates date;
 
     @ManyToOne
     @JoinColumn(name = "CARRIER_ID")

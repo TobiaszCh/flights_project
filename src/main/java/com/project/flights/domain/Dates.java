@@ -2,18 +2,18 @@ package com.project.flights.domain;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Getter
 @Entity(name = "DATES")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Date {
+public class Dates {
 
     @Id
     @NotNull
@@ -34,5 +34,11 @@ public class Date {
             fetch = FetchType.LAZY
     )
     private List<Flight> flights = new ArrayList<>();
+
+    public Dates(Long id, LocalDateTime departure, LocalDateTime arrival) {
+        this.id = id;
+        this.departure = departure;
+        this.arrival = arrival;
+    }
 }
 

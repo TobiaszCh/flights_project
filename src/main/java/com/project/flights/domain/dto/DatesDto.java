@@ -2,13 +2,13 @@ package com.project.flights.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import java.time.LocalDateTime;
 
 @Getter
 @AllArgsConstructor
-public class PlaceDto {
+public class DatesDto {
 
     private Long id;
-    private String continent;
-    private String country;
-    private String city;
+    private LocalDateTime departure;
+    private LocalDateTime arrival;
 }

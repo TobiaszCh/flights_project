@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class CarrierMapper {
 
-    private final FlightRepository flightRepository;
 
     public Carrier mapToCarrier(final CarrierDto carrierDto) {
         return new Carrier(
@@ -23,8 +22,7 @@ public class CarrierMapper {
     public CarrierDto mapToCarrierDto(final Carrier carrier) {
         return new CarrierDto(
                 carrier.getId(),
-                carrier.getName()
-        );
+                carrier.getName());
     }
 
     public List<CarrierDto> mapToCarrierDtoList(List<Carrier> carrierList) {
@@ -32,6 +30,4 @@ public class CarrierMapper {
                 .map(this::mapToCarrierDto)
                 .collect(Collectors.toList());
     }
-
-
 }

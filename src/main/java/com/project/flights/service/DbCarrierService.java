@@ -5,9 +5,7 @@ import com.project.flights.exceptions.AllNotFoundException;
 import com.project.flights.repository.CarrierRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -27,9 +25,7 @@ public class DbCarrierService {
         carrierRepository.save(carrier);
     }
 
-    public void deleteCarrier(Long carriersId) {
-        carrierRepository.deleteById(carriersId);
+    public void deleteCarrier(Long carrierId) {
+        carrierRepository.deleteById(carrierId);
     }
-
-
 }

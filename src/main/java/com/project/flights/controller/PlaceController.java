@@ -1,6 +1,5 @@
 package com.project.flights.controller;
 
-
 import com.project.flights.domain.Place;
 import com.project.flights.domain.dto.PlaceDto;
 import com.project.flights.exceptions.AllNotFoundException;
@@ -9,7 +8,6 @@ import com.project.flights.service.DbPlaceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController

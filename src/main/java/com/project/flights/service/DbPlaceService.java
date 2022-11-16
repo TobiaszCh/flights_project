@@ -1,12 +1,10 @@
 package com.project.flights.service;
 
-import com.project.flights.domain.Carrier;
 import com.project.flights.domain.Place;
 import com.project.flights.exceptions.AllNotFoundException;
 import com.project.flights.repository.PlaceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -30,6 +28,4 @@ public class DbPlaceService {
     public void deletePlace(Long placeId) {
         placeRepository.deleteById(placeId);
     }
-
-
 }

@@ -18,7 +18,7 @@ public class Place {
     @NotNull
     @GeneratedValue
     @Column(name = "PLACE_ID")
-    private String id;
+    private Long id;
 
     @Column(name = "CONTINENT")
     private String continent;
@@ -27,7 +27,7 @@ public class Place {
     private String country;
 
     @Column(name = "CITY")
-    private String City;
+    private String city;
 
     @OneToMany(
             targetEntity = Flight.class,
@@ -37,10 +37,10 @@ public class Place {
     )
     private List<Flight> flights = new ArrayList<>();
 
-    public Place(String id, String continent, String country, String city) {
+    public Place(Long id, String continent, String country, String city) {
         this.id = id;
         this.continent = continent;
         this.country = country;
-        City = city;
+        this.city = city;
     }
 }

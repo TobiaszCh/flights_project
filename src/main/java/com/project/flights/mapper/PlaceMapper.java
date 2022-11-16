@@ -1,13 +1,9 @@
 package com.project.flights.mapper;
 
-import com.project.flights.domain.Carrier;
 import com.project.flights.domain.Place;
-import com.project.flights.domain.dto.CarrierDto;
 import com.project.flights.domain.dto.PlaceDto;
-import com.project.flights.repository.FlightRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,6 +32,4 @@ public class PlaceMapper {
                 .map(this::mapToPlaceDto)
                 .collect(Collectors.toList());
     }
-
-
 }

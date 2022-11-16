@@ -9,7 +9,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class GlobalHttpErrorHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(AllNotFoundException.class)
-    public ResponseEntity<Object> handleCarrierNotFoundException(AllNotFoundException exception) {
+    public ResponseEntity<Object> handleCarrierNotFoundException() {
         return ResponseEntity.badRequest().body("Not Exist");
     }
 }
