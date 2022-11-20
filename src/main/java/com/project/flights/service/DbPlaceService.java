@@ -21,8 +21,8 @@ public class DbPlaceService {
         return placeRepository.findById(placeId).orElseThrow(AllNotFoundException::new);
     }
 
-    public void savePlace(Place place) {
-        placeRepository.save(place);
+    public Place savePlace(Place place) {
+        return placeRepository.save(place);
     }
 
     public void deletePlace(Long placeId) {

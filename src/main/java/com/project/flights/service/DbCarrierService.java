@@ -21,8 +21,8 @@ public class DbCarrierService {
         return carrierRepository.findById(carrierId).orElseThrow(AllNotFoundException::new);
     }
 
-    public void saveCarrier(Carrier carrier) {
-        carrierRepository.save(carrier);
+    public Carrier saveCarrier(Carrier carrier) {
+        return carrierRepository.save(carrier);
     }
 
     public void deleteCarrier(Long carrierId) {

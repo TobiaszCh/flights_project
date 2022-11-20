@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/v1/dates")
-public class DateController {
+public class DatesController {
 
     private final DbDatesService dbDatesService;
     private final DatesMapper datesMapper;
