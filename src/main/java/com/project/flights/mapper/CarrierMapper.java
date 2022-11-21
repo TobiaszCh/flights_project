@@ -2,7 +2,6 @@ package com.project.flights.mapper;
 
 import com.project.flights.domain.Carrier;
 import com.project.flights.domain.dto.CarrierDto;
-import com.project.flights.repository.FlightRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
