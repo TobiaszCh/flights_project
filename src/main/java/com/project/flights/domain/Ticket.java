@@ -23,4 +23,5 @@ public class Ticket {
 
     @Column(name = "PRICE")
     private double price;
+
 }

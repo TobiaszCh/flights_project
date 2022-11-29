@@ -20,7 +20,7 @@ public class Flight {
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "TICKET_ID")
-    private Ticket ticketList;
+    private Ticket ticket;
 
     @ManyToOne
     @JoinColumn(name = "PLACE_ID")
