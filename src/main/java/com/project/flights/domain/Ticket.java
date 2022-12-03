@@ -4,6 +4,7 @@ import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Getter
@@ -24,4 +25,8 @@ public class Ticket {
     @Column(name = "PRICE")
     private double price;
 
+    public Ticket(String kindOfPrice, double price) {
+        this.kindOfPrice = kindOfPrice;
+        this.price = price;
+    }
 }

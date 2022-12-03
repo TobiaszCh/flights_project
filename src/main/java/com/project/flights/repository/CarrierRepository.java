@@ -1,15 +1,8 @@
 package com.project.flights.repository;
 
 import com.project.flights.domain.Carrier;
-import org.springframework.data.repository.CrudRepository;
-import java.util.List;
-import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CarrierRepository extends CrudRepository<Carrier, Long> {
+public interface CarrierRepository extends JpaRepository<Carrier, Long> {
 
-    @Override
-    List<Carrier> findAll();
-
-    @Override
-    Optional<Carrier> findById(Long id);
 }

@@ -29,8 +29,7 @@ public class Carrier {
     )
     private List<Flight> flights = new ArrayList<>();
 
-    public Carrier(Long id, String name) {
-        this.id = id;
+    public Carrier(String name) {
         this.name = name;
     }
 }

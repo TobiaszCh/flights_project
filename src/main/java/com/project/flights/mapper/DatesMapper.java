@@ -13,7 +13,6 @@ public class DatesMapper {
 
     public Dates mapToDates(final DatesDto datesDto) {
         return new Dates(
-                datesDto.getId(),
                 datesDto.getDeparture(),
                 datesDto.getArrival());
     }

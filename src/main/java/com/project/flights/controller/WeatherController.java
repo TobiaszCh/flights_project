@@ -1,8 +1,7 @@
 package com.project.flights.controller;
 
 import com.project.flights.domain.dto.WeatherDto;
-import com.project.flights.exceptions.AllNotFoundException;
-import com.project.flights.service.WeatherService;
+import com.project.flights.service.DbWeatherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,11 +11,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/weather")
 public class WeatherController {
 
-    public final WeatherService weatherService;
+    public final DbWeatherService dbweatherService;
 
     @GetMapping(value = "{city}")
     public ResponseEntity<WeatherDto> getWeather(@PathVariable String city) {
-        return ResponseEntity.ok(weatherService.getWeatherForCity(city));
+        return ResponseEntity.ok(dbweatherService.getWeatherForCity(city));
     }
-
 }

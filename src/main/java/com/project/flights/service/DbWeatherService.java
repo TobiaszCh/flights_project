@@ -5,17 +5,13 @@ import com.project.flights.domain.dto.WeatherDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
-
 @Service
 @RequiredArgsConstructor
-public class WeatherService {
+public class DbWeatherService {
 
     private final WeatherClient weatherClient;
 
     public WeatherDto getWeatherForCity(String city) {
         return weatherClient.getWeather(city);
-
     }
 }

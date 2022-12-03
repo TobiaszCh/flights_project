@@ -47,7 +47,7 @@ class PlaceControllerTest {
     @Test
     void checkGetPlaceId() throws Exception {
         //Given
-        Place place = new Place(1L, "Europa", "Wlochy", "Mediolan");
+        Place place = new Place("Europa", "Wlochy", "Mediolan");
         PlaceDto placeDto = new PlaceDto(1L, "Europa", "Wlochy", "Mediolan");
         when(dbPlaceService.getPlace(1L)).thenReturn(place);
         when(placeMapper.mapToPlaceDto(place)).thenReturn(placeDto);

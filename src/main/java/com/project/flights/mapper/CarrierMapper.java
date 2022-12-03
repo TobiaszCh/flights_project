@@ -14,7 +14,6 @@ public class CarrierMapper {
 
     public Carrier mapToCarrier(final CarrierDto carrierDto) {
         return new Carrier(
-                carrierDto.getId(),
                 carrierDto.getName());
     }
 

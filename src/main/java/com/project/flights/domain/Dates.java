@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-@Entity(name = "DATES")
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 public class Dates {
@@ -20,11 +20,7 @@ public class Dates {
     @GeneratedValue
     @Column(name = "DATE_ID")
     private Long id;
-
-    @Column(name = "DEPARTURE")
     private LocalDateTime departure;
-
-    @Column(name = "ARRIVAL")
     private LocalDateTime arrival;
 
     @OneToMany(
@@ -35,8 +31,7 @@ public class Dates {
     )
     private List<Flight> flights = new ArrayList<>();
 
-    public Dates(Long id, LocalDateTime departure, LocalDateTime arrival) {
-        this.id = id;
+    public Dates(LocalDateTime departure, LocalDateTime arrival) {
         this.departure = departure;
         this.arrival = arrival;
     }

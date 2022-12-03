@@ -10,6 +10,6 @@ public class GlobalHttpErrorHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(AllNotFoundException.class)
     public ResponseEntity<Object> handleCarrierNotFoundException() {
-        return ResponseEntity.badRequest().body("Not Exist");
+        return ResponseEntity.notFound().build();
     }
 }

@@ -48,7 +48,7 @@ public class CarrierControllerTest {
     @Test
     void checkGetCarrierId() throws Exception {
         //Given
-        Carrier carrier = new Carrier(1L, "LOT");
+        Carrier carrier = new Carrier("LOT");
         CarrierDto carrierDto = new CarrierDto(1L, "LOT");
         when(dbCarrierService.getCarrier(1L)).thenReturn(carrier);
         when(carrierMapper.mapToCarrierDto(carrier)).thenReturn(carrierDto);
@@ -64,7 +64,7 @@ public class CarrierControllerTest {
     @Test
     void checkPostCarrierId() throws Exception {
         //Given
-        Carrier carrier = new Carrier(1L, "LOT");
+        Carrier carrier = new Carrier("LOT");
         CarrierDto carrierDto = new CarrierDto(1L, "LOT");
         when(dbCarrierService.saveCarrier(carrierMapper.mapToCarrier(carrierDto))).thenReturn(carrier);
 
@@ -88,6 +88,5 @@ public class CarrierControllerTest {
                         .delete("/v1/carriers/1")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk());
-
     }
 }

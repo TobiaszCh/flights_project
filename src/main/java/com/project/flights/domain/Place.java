@@ -37,8 +37,7 @@ public class Place {
     )
     private List<Flight> flights = new ArrayList<>();
 
-    public Place(Long id, String continent, String country, String city) {
-        this.id = id;
+    public Place(String continent, String country, String city) {
         this.continent = continent;
         this.country = country;
         this.city = city;

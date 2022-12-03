@@ -13,7 +13,6 @@ public class PlaceMapper {
 
     public Place mapToPlace(final PlaceDto placeDto) {
         return new Place(
-                placeDto.getId(),
                 placeDto.getContinent(),
                 placeDto.getCountry(),
                 placeDto.getCity());

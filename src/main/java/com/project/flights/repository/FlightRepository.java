@@ -1,14 +1,11 @@
 package com.project.flights.repository;
 
 import com.project.flights.domain.Flight;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import java.util.List;
 
 
 @Repository
-public interface FlightRepository extends CrudRepository<Flight, Long> {
+public interface FlightRepository extends JpaRepository<Flight, Long> {
 
-    @Override
-    List<Flight> findAll();
 }

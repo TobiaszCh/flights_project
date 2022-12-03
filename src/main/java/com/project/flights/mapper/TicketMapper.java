@@ -13,7 +13,6 @@ public class TicketMapper {
 
     public Ticket mapToTicket(final TicketDto ticketDto) {
         return new Ticket(
-                ticketDto.getId(),
                 ticketDto.getKindOfPrice(),
                 ticketDto.getPrice());
     }

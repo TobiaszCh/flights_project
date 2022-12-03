@@ -27,6 +27,5 @@ public class WeatherClient {
                 .humidity((openWeatherDto.getMain().getHumidity()))
                 .windSpeed(openWeatherDto.getWind().getSpeed())
                 .build();
-
     }
 }
