@@ -18,7 +18,7 @@ public class Flight {
     @Column(name = "FLIGHT_ID")
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "TICKET_ID")
     private Ticket ticket;
 

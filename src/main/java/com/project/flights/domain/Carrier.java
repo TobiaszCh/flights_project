@@ -24,8 +24,7 @@ public class Carrier {
     @OneToMany(
             targetEntity = Flight.class,
             mappedBy = "carrier",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
+            cascade = CascadeType.ALL
     )
     private List<Flight> flights = new ArrayList<>();
 

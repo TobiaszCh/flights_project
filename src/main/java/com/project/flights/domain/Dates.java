@@ -26,8 +26,7 @@ public class Dates {
     @OneToMany(
             targetEntity = Flight.class,
             mappedBy = "date",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
+            cascade = CascadeType.ALL
     )
     private List<Flight> flights = new ArrayList<>();
 

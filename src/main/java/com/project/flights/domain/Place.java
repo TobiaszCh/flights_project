@@ -32,8 +32,7 @@ public class Place {
     @OneToMany(
             targetEntity = Flight.class,
             mappedBy = "place",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
+            cascade = CascadeType.ALL
     )
     private List<Flight> flights = new ArrayList<>();
 

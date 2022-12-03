@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Entity(name = "TICKETS")
@@ -24,6 +26,13 @@ public class Ticket {
 
     @Column(name = "PRICE")
     private double price;
+
+    @OneToMany(
+            targetEntity = Flight.class,
+            mappedBy = "ticket",
+            cascade = CascadeType.ALL
+    )
+    private List<Flight> flights = new ArrayList<>();
 
     public Ticket(String kindOfPrice, double price) {
         this.kindOfPrice = kindOfPrice;
