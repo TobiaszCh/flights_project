@@ -1,6 +1,7 @@
 package com.project.flights.controller;
 
 import com.project.flights.mapper.DatesMapper;
+import com.project.flights.service.DbDatesService;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class DatesControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
+
+    @MockBean
+    private DbDatesService dbDatesService;
 
     @MockBean
     private DatesMapper datesMapper;
@@ -45,5 +49,6 @@ public class DatesControllerTest {
                         .delete("/v1/dates/1")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk());
+
     }
 }
