@@ -41,4 +41,6 @@ public class Place {
         this.country = country;
         this.city = city;
     }
+
+
 }

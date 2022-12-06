@@ -21,7 +21,7 @@ import static org.mockito.Mockito.when;
 
 @SpringJUnitWebConfig
 @WebMvcTest(TicketController.class)
-class TicketControllerTest {
+public class TicketControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -47,7 +47,7 @@ class TicketControllerTest {
     @Test
     void checkGetTicketId() throws Exception {
         //Given
-        Ticket ticket = new Ticket(1L, "LOW", 100);
+        Ticket ticket = new Ticket("LOW", 100);
         TicketDto ticketDto = new TicketDto(1L, "LOW", 100);
         when(dbTicketService.getTicket(1L)).thenReturn(ticket);
         when(ticketMapper.mapToTicketDto(ticket)).thenReturn(ticketDto);

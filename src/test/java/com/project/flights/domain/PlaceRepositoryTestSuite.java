@@ -67,4 +67,18 @@ public class PlaceRepositoryTestSuite {
         //Then
         assertFalse(foundCart.isPresent());
     }
+
+    @Test
+    public void testRelationWithFlight() {
+        //Given
+        Place place = new Place();
+        Flight flight = new Flight();
+        //When
+        place.getFlights().add(flight);
+        long size = place.getFlights().size();
+        //Then
+        assertEquals(1, size);
+        //Clean
+        placeRepository.deleteAll();
+    }
 }

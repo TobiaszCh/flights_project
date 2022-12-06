@@ -67,4 +67,18 @@ public class TicketRepositoryTestSuite {
         //Then
         assertFalse(foundCart.isPresent());
     }
+
+    @Test
+    public void testRelationWithFlight() {
+        //Given
+        Ticket ticket = new Ticket();
+        Flight flight = new Flight();
+        //When
+        ticket.getFlights().add(flight);
+        long size = ticket.getFlights().size();
+        //Then
+        assertEquals(1, size);
+        //Clean
+        ticketRepository.deleteAll();
+    }
 }

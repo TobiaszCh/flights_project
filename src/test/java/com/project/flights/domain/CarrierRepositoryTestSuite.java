@@ -67,4 +67,18 @@ public class CarrierRepositoryTestSuite {
         //Then
         assertFalse(foundCart.isPresent());
     }
+
+    @Test
+    public void testRelationWithFlight() {
+        //Given
+        Carrier carrier = new Carrier();
+        Flight flight = new Flight();
+        //When
+        carrier.getFlights().add(flight);
+        long size = carrier.getFlights().size();
+        //Then
+        assertEquals(1, size);
+        //Clean
+        carrierRepository.deleteAll();
+    }
 }

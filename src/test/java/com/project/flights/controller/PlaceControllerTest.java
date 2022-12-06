@@ -21,7 +21,7 @@ import static org.mockito.Mockito.when;
 
 @SpringJUnitWebConfig
 @WebMvcTest(PlaceController.class)
-class PlaceControllerTest {
+public class PlaceControllerTest {
 
     @Autowired
     private MockMvc mockMvc;

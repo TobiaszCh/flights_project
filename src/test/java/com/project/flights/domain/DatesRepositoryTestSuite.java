@@ -67,4 +67,18 @@ public class DatesRepositoryTestSuite {
         //Then
         assertFalse(foundCart.isPresent());
     }
+
+    @Test
+    public void testRelationWithFlight() {
+        //Given
+        Dates dates = new Dates();
+        Flight flight = new Flight();
+        //When
+        dates.getFlights().add(flight);
+        long size = dates.getFlights().size();
+        //Then
+        assertEquals(1, size);
+        //Clean
+        datesRepository.deleteAll();
+    }
 }
