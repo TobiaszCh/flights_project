@@ -1,5 +1,6 @@
 package com.project.flights.client.weather;
 
+import com.project.flights.client.weather.config.WeatherConfig;
 import com.project.flights.client.weather.dto.OpenWeatherDto;
 import com.project.flights.domain.dto.WeatherDto;
 import lombok.RequiredArgsConstructor;
@@ -12,14 +13,11 @@ import org.springframework.web.client.RestTemplate;
 public class WeatherClient {
 
     private final RestTemplate restTemplate;
-
-    @Value("${weather.api.endpoint.prod}")
-    private String weatherApiEndpoint;
-    @Value("${weather.app.key}")
-    private String weatherAppKey;
+    private final WeatherConfig weatherConfig;
 
     public WeatherDto getWeather(String city) {
-        OpenWeatherDto openWeatherDto = restTemplate.getForObject(weatherApiEndpoint + "weather?q={city}&appid=" + weatherAppKey + "&lang=pl&units=metric",
+        OpenWeatherDto openWeatherDto = restTemplate.getForObject(weatherConfig.getWeatherApiEndpoint()
+                        + "weather?q={city}&appid=" + weatherConfig.getWeatherAppKey() + "&lang=pl&units=metric",
                 OpenWeatherDto.class, city);
         return WeatherDto.builder()
                 .temperature(openWeatherDto.getMain().getTemp())
