@@ -1,3 +1,3 @@
-4. Flights project
+1. Flights project
 - the goal of the project is to create an application in which you can create and ultimately search for flights
 - technologies: REST API architecture, Hibernate and Spring, unit tests, Rest Templete, Swagger, Scheduler. In progress: Vaadin...
